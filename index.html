@@ -5,24 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="src/images/gem.gif" type="image/x-icon">
+
+    <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
 
     <title>Gem Clicker</title>
 
 </head>
 <body>
+    <main>
+        <div class="column column-1">
+            <div class="infos">
+                <h1 id="counter">Gems: <span id="gems">0</span></h1>
+                <div id="counter2">Gems per click: <span id="gems-per-click">1</span></div>
+                <div id="counter3">Gems per second: <span id="gems-per-second">0</span></div>
+            </div>
 
-    <div id="image-container">
-        <img src="src/images/gem.gif" alt="Imagem" id="image">
-        <div id="counter">Gems: <span id="gems">0</span></div>
-        <div id="counter2">Gems per click: <span id="gems-per-click">0</span></div>
-        <div id="counter3">Gems per second: <span id="gems-per-second">0</span></div>
-    </div>
+            <img src="src/images/gem.gif" alt="Imagem" id="image">
+        </div>
 
-    <button id="points-button" class="btpoints">
-        Gems per click +1 (Price: <span id="button-price">10</span> gems)
-    </button>
+        <div class="column">
+            <h1>teste</h1>
+        </div>
+
+        <div class="column">
+            <h2>Store</h2>
+
+            <button id="points-button" class="btpoints">
+                <h1>Click +1</h1>
+                <span id="button-price">10</span> gems
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <small>Created by: Eduardo Henrique</small>
+        <div class="social-medias">
+            <a href="https://www.linkedin.com/in/eduardohenriquedev/" target="_blank" rel="noopener noreferrer" class="social-medias-link">
+                <img class="social-medias-icons" src="src/images/icons/social-medias/linkedin.png" alt="linkedin">
+            </a>
+            <a href="https://github.com/Git-Eduardo-Henrique/Pokemon-Landing-Page" target="_blank" rel="noopener noreferrer" class="social-medias-link">
+                <img class="social-medias-icons" src="src/images/icons/social-medias/github.png" alt="github">
+            </a>
+            <a href="https://www.instagram.com/eduardo_henrique_0101/" target="_blank" rel="noopener noreferrer" class="social-medias-link">
+                <img class="social-medias-icons" src="src/images/icons/social-medias/instagram.png" alt="instagram">
+            </a>
+        </div>
+    </footer>
+
     <script src="src/js/script.js"></script>
-
 </body>
 </html>

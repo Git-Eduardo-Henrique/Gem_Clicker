@@ -20,6 +20,7 @@ function updateclicks(){
     gems -= buttonPrice
 
     buttonPrice *= 3.5;
+    buttonPrice = Math.floor(buttonPrice)
     spanPrice.innerHTML = buttonPrice
 }
 
@@ -28,7 +29,9 @@ const loop = setInterval( () => {
     spanClicks.innerHTML = clicks
 
     if (gems > 0){
-        title.innerHTML = `Gemas: ${gems}`
+        title.innerHTML = `${gems} Gems - Gem Clicker`
+    } else {
+        title.innerHTML = "Gem Clicker"
     }
     
     if (gems >= buttonPrice){
