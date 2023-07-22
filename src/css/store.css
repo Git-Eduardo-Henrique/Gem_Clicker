@@ -23,7 +23,7 @@
     border-radius: 15px;
 }
 
-.btpoints {
+.btBuilds {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -41,21 +41,21 @@
     cursor: pointer;
 }
 
-.btpoints[disabled]{
+.btBuilds[disabled]{
     background: #3a3a3a;
 
     cursor: not-allowed;
 }
 
-.btpoints img{
+.btBuilds img{
     height: 64px;
 }
 
-.btpoints-info{
+.btBuilds-info{
     text-align: left;
 }
 
-.btpoints-info h1{
+.btBuilds-info h1{
     font-size: 1.5em;
     font-weight: bolder;
 }

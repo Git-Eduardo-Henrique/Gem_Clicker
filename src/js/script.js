@@ -1,24 +1,27 @@
+import { createButtons } from "./store.js"
+createButtons(3)
+
 const title = document.querySelector('title')
 const spanGems = document.querySelector('span#gems')
 const spanClicks = document.querySelector('span#gems-per-click')
 const spanClicksPS = document.querySelector('span#gems-per-second')
 const imageGem = document.querySelector('img#image')
 
-const btPoints = document.querySelector('button#points-button')
-const pPrice = document.querySelector("p#button-price")
-const itemCont = document.querySelector("h1#cont-item")
+// const btPoints = document.querySelector('button#points-button')
+// const pPrice = document.querySelector("p#button-price")
+// const itemCont = document.querySelector("h1#cont-item")
 
-const pickaxeButton = document.querySelector("button#pickaxe-button")
-const pPrice2 = document.querySelector("p#button-price2")
-const itemCont2 = document.querySelector("h1#cont-item-2")
+// const pickaxeButton = document.querySelector("button#pickaxe-button")
+// const pPrice2 = document.querySelector("p#button-price2")
+// const itemCont2 = document.querySelector("h1#cont-item-2")
 
-
+let show = 1
 let gems = 0
 let gemsPerSecond = 0
 // botão 1
 let clicks = 1
 let contitem = 0
-let buttonPriceBase = 10
+let buttonPriceBase = 5
 let buttonPrice = buttonPriceBase * Math.pow(1.2, contitem)
 
 //botao 2
@@ -64,6 +67,7 @@ function clickspersecond(){
 }
 
 const loop = setInterval( () => {
+   
     spanGems.innerHTML = gems
     spanClicks.innerHTML = clicks
 
@@ -73,20 +77,20 @@ const loop = setInterval( () => {
         title.innerHTML = "Gem Clicker"
     }
     
-    if (gems >= buttonPrice){
-        btPoints.disabled = false
-    } else {
-        btPoints.disabled = true
-    }
+    // if (gems >= buttonPrice){
+    //     btPoints.disabled = false
+    // } else {
+    //     btPoints.disabled = true
+    // }
 
-    if (gems >= buttonPrice2){
-        pickaxeButton.disabled = false
-    } else {
-        pickaxeButton.disabled = true
-    }
+    // if (gems >= buttonPrice2){
+    //     pickaxeButton.disabled = false
+    // } else {
+    //     pickaxeButton.disabled = true
+    // }
     
 })
 
 imageGem.addEventListener('click', increasePoints);
-btPoints.addEventListener('click', updateclicks);
-pickaxeButton.addEventListener('click', clickspersecond)
+// btPoints.addEventListener('click', updateclicks);
+// pickaxeButton.addEventListener('click', clickspersecond)
