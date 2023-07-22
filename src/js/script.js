@@ -3,33 +3,44 @@ const spanGems = document.querySelector('span#gems')
 const spanClicks = document.querySelector('span#gems-per-click')
 const imageGem = document.querySelector('img#image')
 const btPoints = document.querySelector('button#points-button')
-const spanPrice = document.querySelector("span#button-price")
+const pPrice = document.querySelector("p#button-price")
+const itemCont = document.querySelector("h1#cont-item")
 
 
 let gems = 0
+// botão 1
 let clicks = 1
-let buttonPrice = 10
+let contitem = 0
+let buttonPriceBase = 10
+let buttonPrice = buttonPriceBase * Math.pow(1.2, contitem)
+
 
 // Função para aumentar os pontos ao clicar na imagem
 function increasePoints() {
   gems += clicks
+  gems = Number(gems.toFixed(1))
 }
 
 function updateclicks(){
-    clicks++
-    gems -= buttonPrice
+    clicks += 0.1
+    clicks = Number(clicks.toFixed(1))
 
-    buttonPrice *= 3.5;
+    contitem++
+    gems -= buttonPrice
+    gems = Number(gems.toFixed(1))
+
+    buttonPrice = buttonPriceBase * Math.pow(1.5, contitem)
     buttonPrice = Math.floor(buttonPrice)
-    spanPrice.innerHTML = buttonPrice
+    pPrice.innerHTML = `${buttonPrice} gems`
 }
 
 const loop = setInterval( () => {
     spanGems.innerHTML = gems
     spanClicks.innerHTML = clicks
+    itemCont.innerHTML = contitem
 
     if (gems > 0){
-        title.innerHTML = `${gems} Gems - Gem Clicker`
+        title.innerHTML = `${gems} gems - Gem Clicker`
     } else {
         title.innerHTML = "Gem Clicker"
     }

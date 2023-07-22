@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="src/images/gem.gif" type="image/x-icon">
+    <link rel="shortcut icon" href="src/images/icons/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/click-column.css">
+    <link rel="stylesheet" href="src/css/store.css">
 
     <title>Gem Clicker</title>
 
 </head>
 <body>
     <main>
-        <div class="column column-1">
+        <div class="column click-column">
             <div class="infos">
                 <h1 id="counter">Gems: <span id="gems">0</span></h1>
                 <div id="counter2">Gems per click: <span id="gems-per-click">1</span></div>
@@ -28,14 +30,43 @@
             <h1>teste</h1>
         </div>
 
-        <div class="column">
-            <h2>Store</h2>
+        <div class="column store">
+            <h1 class="store-title">Store</h1>
 
             <button id="points-button" class="btpoints">
-                <h1>Click +1</h1>
-                <span id="button-price">10</span> gems
+                <div class="button-img-info">
+                    <img src="src/images/icons/store-items/cursor.png" alt="add-click">
+                    <div class="btpoints-info">
+                        <h1>Click +0.1</h1>
+                        <p id="button-price">10 gems</p> 
+                    </div>
+                </div>
+                <h1 id="cont-item" class="cont-item">0</h1>
+            </button>
+
+            <button id="points-button" class="btpoints">
+                <div class="button-img-info">
+                    <img src="src/images/icons/store-items/pickaxe.png" alt="add-click">
+                    <div class="btpoints-info">
+                        <h1>Pickaxe +0.1/s (not avaliable)</h1>
+                        <p id="button-price">15 gems</p> 
+                    </div>
+                </div>
+                <h1 id="cont-item" class="cont-item">0</h1>
+            </button>
+
+            <button id="points-button" class="btpoints">
+                <div class="button-img-info">
+                    <img src="src/images/icons/store-items/miner.png" alt="add-click">
+                    <div class="btpoints-info">
+                        <h1>Miner +1/s (not avaliable)</h1>
+                        <p id="button-price">100 gems</p> 
+                    </div>
+                </div>
+                <h1 id="cont-item" class="cont-item">0</h1>
             </button>
         </div>
+
     </main>
 
     <footer>
