@@ -7,6 +7,7 @@ const buildings = [
         show_price : "5 gems",
         init_price: 5,
         price: 5,
+        up_value: 0.1,
         cont_item : 0,
         func: 1
     },
@@ -16,6 +17,7 @@ const buildings = [
         show_price : "15 gems",
         init_price: 15,
         price: 15,
+        up_value: 0.1,
         cont_item : 0,
         func: 2
     },
@@ -25,6 +27,7 @@ const buildings = [
         show_price : "100 gems",
         init_price: 100,
         price: 100,
+        up_value: 1,
         cont_item : 0,
         func: 2
     },
@@ -34,6 +37,7 @@ const buildings = [
         show_price : "1100 gems",
         init_price: 1100,
         price: 1100,
+        up_value: 8,
         cont_item : 0,
         func: 2
     },
@@ -43,6 +47,7 @@ const buildings = [
         show_price : "12000 gems",
         init_price: 12000,
         price: 12000,
+        up_value: 47,
         cont_item : 0,
         func: 2
     },
@@ -52,6 +57,7 @@ const buildings = [
         show_price : "130000 gems",
         init_price: 130000,
         price: 130000,
+        up_value: 260,
         cont_item : 0,
         func: 2
     },
@@ -61,6 +67,7 @@ const buildings = [
         show_price : "1400000 gems",
         init_price: 1400000,
         price: 1400000,
+        up_value: 1400,
         cont_item : 0,
         func: 2
     },
@@ -109,7 +116,7 @@ export function createButtons(){
         store.append(created_button)
 
         created_button.addEventListener("click", () => {
-            buildings_upgrades(buildings[index].func, index)
+            buildings_upgrades(buildings[index].func, index, buildings[index].up_value)
         })
 
         created_button.disabled = true
