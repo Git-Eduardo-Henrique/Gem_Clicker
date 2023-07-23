@@ -5,6 +5,7 @@
     --background: #1A232D;
 
     font: 1em 'Kanit', sans-serif;
+    user-select: none;
 }
 
 body {

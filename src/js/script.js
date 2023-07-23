@@ -17,7 +17,7 @@ let clicks = 1
 
 // Função para aumentar os pontos ao clicar na imagem
 function increasePoints() {
-    gems += clicks 
+    gems += clicks
     gems = Number(gems.toFixed(1))
 }
   
@@ -38,7 +38,7 @@ export function buildings_upgrades(upgrade = Number, index = Number, up_value = 
             gems = Number(gems.toFixed(1))
 
             buildings[index].price = Math.floor(
-                buildings[index].init_price * Math.pow(1.3, buildings[index].cont_item)
+                buildings[index].init_price * Math.pow(1.151, buildings[index].cont_item)
                 )
             pPrice.textContent = `${buildings[index].price} gems`
             
@@ -54,7 +54,7 @@ export function buildings_upgrades(upgrade = Number, index = Number, up_value = 
             gemsPerSecond = Number(gemsPerSecond.toFixed(1))
 
             buildings[index].price = Math.floor(
-                buildings[index].init_price * Math.pow(1.3, buildings[index].cont_item)
+                buildings[index].init_price * Math.pow(1.151, buildings[index].cont_item)
                 )
             pPrice.textContent = `${buildings[index].price} gems`
 
