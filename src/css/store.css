@@ -5,9 +5,11 @@
     
     gap: 0.5rem;
 
-    padding:1rem 1rem 0 1rem;
+    padding:1rem 1rem 1rem 1rem;
 
     border-bottom-left-radius: 15px;
+
+    overflow-y: scroll;
 }
 
 .store-title{

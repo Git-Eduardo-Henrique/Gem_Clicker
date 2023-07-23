@@ -28,16 +28,52 @@ const buildings = [
         cont_item : 0,
         func: 2
     },
+    {
+        description : "Minecart +8/s",
+        image_src : "src/images/icons/store-items/minecart.png",
+        show_price : "1100 gems",
+        init_price: 1100,
+        price: 1100,
+        cont_item : 0,
+        func: 2
+    },
+    {
+        description : "Mine +47/s",
+        image_src : "src/images/icons/store-items/cave.png",
+        show_price : "12000 gems",
+        init_price: 12000,
+        price: 12000,
+        cont_item : 0,
+        func: 2
+    },
+    {
+        description : "Extraction +260/s",
+        image_src : "src/images/icons/store-items/extraction.png",
+        show_price : "130000 gems",
+        init_price: 130000,
+        price: 130000,
+        cont_item : 0,
+        func: 2
+    },
+    {
+        description : "Exportation +1,400/s",
+        image_src : "src/images/icons/store-items/exportation.png",
+        show_price : "1400000 gems",
+        init_price: 1400000,
+        price: 1400000,
+        cont_item : 0,
+        func: 2
+    },
 ]
 
 export function builds(){
     return buildings
 }
 
-export function createButtons(show){
+export function createButtons(){
     const store = document.querySelector("div.store")
 
-    for (let index = 0; index < show; index++){
+    for (let index = 0; index < buildings.length; index++){
     
         const created_button = document.createElement("button")
         created_button.setAttribute("id", `button-${index}`)
@@ -77,5 +113,14 @@ export function createButtons(show){
         })
 
         created_button.disabled = true
+    }
+}
+
+export function deleteButtons(show){
+    for (let index = 0; index < show; index++){
+        const button = document.querySelector(`button#button-${index}`)
+
+        const button_father = button.parentNode
+        button_father.removeChild(button)
     }
 }

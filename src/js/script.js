@@ -1,7 +1,7 @@
-import { createButtons, builds } from "./buildings.js"
+import { createButtons, builds, deleteButtons } from "./buildings.js"
 
-let show = 3
-createButtons(show)
+let show = 1
+createButtons()
 
 const buildings = builds()
 
@@ -28,11 +28,15 @@ export function buildings_upgrades(upgrade = Number, index = Number){
             const pPrice = document.querySelector(`p#price-${index}`)
             const cont_text = document.querySelector(`h1#item-cont-${index}`)
 
-            clicks += 0.1
-            clicks = Number(clicks.toFixed(1))
-
             buildings[index].cont_item++
             cont_text.textContent = buildings[index].cont_item
+
+            if (buildings[index].cont_item == 1){
+                show++
+            }
+
+            clicks += 0.1
+            clicks = Number(clicks.toFixed(1))
 
             gems -= buildings[index].price
             gems = Number(gems.toFixed(1))
@@ -44,7 +48,26 @@ export function buildings_upgrades(upgrade = Number, index = Number){
             
             break
         case 2:
-            console.log("per second")
+            const pPrice2 = document.querySelector(`p#price-${index}`)
+            const cont_text2 = document.querySelector(`h1#item-cont-${index}`)
+
+            buildings[index].cont_item++
+            cont_text2.textContent = buildings[index].cont_item
+
+            if (buildings[index].cont_item == 1){
+                show++
+            } else {
+                console.log("não é")
+            }
+
+            gems -= buildings[index].price
+            gems = Number(gems.toFixed(1))
+
+            buildings[index].price = Math.floor(
+                buildings[index].init_price * Math.pow(1.5, buildings[index].cont_item)
+                )
+            pPrice2.textContent = `${buildings[index].price} gems`
+
             break
     }
 }
@@ -60,13 +83,19 @@ const loop = setInterval( () => {
     }
 
     // checa se o player tem gemas suficiente para cada upgrade
-    for (let index = 0; index < show; index++){
+    for (let index = 0; index < buildings.length; index++){
         const button = document.querySelector(`button#button-${index}`)
 
         if (gems >= buildings[index].price){
             button.disabled = false
         } else {
             button.disabled = true
+        }
+
+        if (index >= show){
+            button.style.display = "none"
+        } else {
+            button.style.display = ""
         }
     }
     
