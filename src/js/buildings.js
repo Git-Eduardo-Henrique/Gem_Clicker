@@ -9,7 +9,7 @@ const buildings = [
         price: 5,
         up_value: 0.1,
         cont_item : 0,
-        func: 1
+        func: "click"
     },
     {
         description : "Pickaxe +0.1/s",
@@ -19,7 +19,7 @@ const buildings = [
         price: 15,
         up_value: 0.1,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
     {
         description : "Miner +1/s",
@@ -29,7 +29,7 @@ const buildings = [
         price: 100,
         up_value: 1,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
     {
         description : "Minecart +8/s",
@@ -39,7 +39,7 @@ const buildings = [
         price: 1100,
         up_value: 8,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
     {
         description : "Mine +47/s",
@@ -49,7 +49,7 @@ const buildings = [
         price: 12000,
         up_value: 47,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
     {
         description : "Extraction +260/s",
@@ -59,7 +59,7 @@ const buildings = [
         price: 130000,
         up_value: 260,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
     {
         description : "Exportation +1,400/s",
@@ -69,7 +69,7 @@ const buildings = [
         price: 1400000,
         up_value: 1400,
         cont_item : 0,
-        func: 2
+        func: "persecond"
     },
 ]
 
@@ -118,16 +118,5 @@ export function createButtons(){
         created_button.addEventListener("click", () => {
             buildings_upgrades(buildings[index].func, index, buildings[index].up_value)
         })
-
-        created_button.disabled = true
-    }
-}
-
-export function deleteButtons(show){
-    for (let index = 0; index < show; index++){
-        const button = document.querySelector(`button#button-${index}`)
-
-        const button_father = button.parentNode
-        button_father.removeChild(button)
     }
 }
