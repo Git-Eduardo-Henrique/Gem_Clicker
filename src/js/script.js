@@ -85,7 +85,7 @@ function checkname(){
 const mainloop = setInterval( () => {
     spanGems.textContent = gems
 
-    updateStatistics(gems, clicks, gemsPerSecond)
+    updateStatistics(clicks, gemsPerSecond)
     checkbuilds()
     checkname()
 })
