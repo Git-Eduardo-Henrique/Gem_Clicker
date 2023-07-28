@@ -15,8 +15,8 @@
 .store-title{
     width: 100%;
 
-    background: #000000a8;
-    color: #fff;
+    background: var(--dark);
+    color: var(--white);
 
     text-align: center;
     font-size: 1.5em;
@@ -32,8 +32,8 @@
 
     width: 100%;
 
-    background-color: #e2dfdf;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
 
     padding: 20px;
 
@@ -44,7 +44,7 @@
 }
 
 .btBuilds[disabled]{
-    background: #3a3a3a;
+    background: var(--disable);
 
     cursor: not-allowed;
 }

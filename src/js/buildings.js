@@ -78,7 +78,7 @@ export function builds(){
 }
 
 export function createButtons(){
-    const store = document.querySelector("div.store")
+    const store = document.querySelector("section#store-column")
 
     for (let index = 0; index < buildings.length; index++){
     

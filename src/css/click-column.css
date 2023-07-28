@@ -13,10 +13,11 @@
 }
 
 .infos {
-    background: #0000008c;
+    background: var(--dark);
 
     color: #fff;
-    font: bold 1em 'Kanit', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
     text-align: center;
 
     width: 100%;
@@ -26,5 +27,5 @@
 
 .infos h1{
     width: 100%;
-    background: #0000006e;
+    background: var(--dark);
 }

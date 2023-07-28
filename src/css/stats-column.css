@@ -8,8 +8,8 @@
 }
 
 .stats-title{
-    background: #0000008c;
-    color: #fff;
+    background: var(--dark);
+    color: var(--white);
  
     padding: 1rem 0 1rem 0;
     width: 100%;
@@ -20,16 +20,16 @@
 }
 
 .stats-general{
-    background: #000000b0;
-    color: #BEB8DC;
+    background: var(--dark);
+    color: var(--gray);
 
     width: 100%;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .stats-general h2{
-    background: #0000008c;
-    color: #e4e4e4;
+    background: var(--dark);
+    color: var(--white);
 
     text-align: center;
     font-size: 1.1em;
@@ -37,5 +37,5 @@
 }
 
 .stats-general p small{
-    color: #e4e4e4;
+    color: var(--white);
 }

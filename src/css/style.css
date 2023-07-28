@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
-* {
-    --white: #fff;
-    --background: #1A232D;
-
-    font: 1em 'Kanit', sans-serif;
-    user-select: none;
-}
-
 body {
     background: var(--background);
 
@@ -38,7 +30,6 @@ footer{
     height: 3rem;
 
     background: var(--background);
-    box-shadow: 0px 10px 40px var(--red);
 
     color: var(--white);
 }
@@ -48,7 +39,7 @@ footer small {
 }
 
 .column {
-    background: #BEB8DC;
+    background: var(--gray);
     width: 33%;
     height: 95vh;
 }

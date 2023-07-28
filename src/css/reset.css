@@ -1,5 +1,17 @@
+:root{
+    --white: #e4e4e4;
+    --gray: #BEB8DC;
+    --background: #1A232D;
+    --dark: #000000b0;
+    --black: #000000;
+    --disable: #3a3a3a;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font: 1em 'Kanit', sans-serif;
+    user-select: none;
  }

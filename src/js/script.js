@@ -1,30 +1,25 @@
 import { createButtons, builds} from "./buildings.js"
 import { updateStatistics, increaseStats } from "./stats.js"
 
-createButtons()
-
-const buildings = builds()
-
 const title = document.querySelector('title')
 const spanGems = document.querySelector('span#gems')
-const spanClicks = document.querySelector('span#gems-per-click')
 const spanClicksPS = document.querySelector('span#gems-per-second')
 const imgGem = document.querySelector('img#image')
 
+const buildings = builds()
+createButtons()
+
 let gems = 0
 let gemsPerSecond = 0
-let clicks = 1  // 
+let clicks = 1
 
-let show = 1  // 
+let show = 1
 
-function increasePoints() {
-    gems += clicks
+function increasePoints(value = 0) {
+    gems += value
     gems = Number(gems.toFixed(1))
-
-    increaseStats(clicks)
 }
   
-
 export function buildings_upgrades(upgrade = Number, index = Number, up_value = Number){
     const pPrice = document.querySelector(`p#price-${index}`)
     const cont_text = document.querySelector(`h1#item-cont-${index}`)
@@ -32,6 +27,7 @@ export function buildings_upgrades(upgrade = Number, index = Number, up_value = 
     buildings[index].cont_item++
     cont_text.textContent = buildings[index].cont_item
 
+    // Increase the building's statistics
     increaseStats(0, true)
 
     if (buildings[index].cont_item == 1){
@@ -78,26 +74,29 @@ function checkbuilds(){
     }
 }
 
-setInterval( () => {
-    spanGems.textContent = gems
-    spanClicks.textContent = clicks
-    spanClicksPS.textContent = gemsPerSecond
-
+function checkname(){
     if (gems > 0){
         title.textContent = `${gems} gems - Gem Clicker`
     } else {
         title.textContent = "Gem Clicker"
     }
+}
 
-    checkbuilds()
+const mainloop = setInterval( () => {
+    spanGems.textContent = gems
+
     updateStatistics(gems, clicks, gemsPerSecond)
+    checkbuilds()
+    checkname()
 })
 
-setInterval(() => {
-    gems += gemsPerSecond
-    gems = Number(gems.toFixed(1))
-
+// gems per second loop
+const gpsloop = setInterval(() => {
+    increasePoints(gemsPerSecond)
     increaseStats(gemsPerSecond)
 }, 1000)
 
-imgGem.addEventListener('click', increasePoints);
+imgGem.addEventListener('click', () => {
+    increasePoints(clicks)
+    increaseStats(clicks)
+});
