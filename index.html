@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/click-column.css">
-    <link rel="stylesheet" href="src/css/store.css">
+    <link rel="stylesheet" href="src/css/stats-column.css">
+    <link rel="stylesheet" href="src/css/store-column.css">
 
     <title>Gem Clicker</title>
 
@@ -28,9 +29,19 @@
         </div>
 
         <!-- statistics column -->
-        <div class="column">
-            <h1>stats (not available)</h1>
-        </div>
+        <section class="column stats-column">
+            <h1 class="stats-title">STATISTICS</h1>
+
+            <div class="stats-general">
+                <h2>General</h2>
+                <!-- <p>Running time: <small id="stats-running-time"></small></p> -->
+                <p>Gems: <small id="stats-gems"></small></p>
+                <p>Gems (all time): <small id="stats-gems-at"></small></p>
+                <p>Gems per click: <small id="stats-gems-pc"></small></p>
+                <p>Gems per second: <small id="stats-gems-ps"></small></p>
+                <p>buildings owned: <small id="stats-buildings-owned"></small></p>
+            </div>
+        </section>
 
         <!-- store column -->
         <div class="column store">

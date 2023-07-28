@@ -1,4 +1,5 @@
 import { createButtons, builds} from "./buildings.js"
+import { updateStatistics, increaseStats } from "./stats.js"
 
 createButtons()
 
@@ -13,12 +14,14 @@ const imgGem = document.querySelector('img#image')
 let gems = 0
 let gemsPerSecond = 0
 let clicks = 1  // 
+
 let show = 1  // 
 
-// 
 function increasePoints() {
     gems += clicks
     gems = Number(gems.toFixed(1))
+
+    increaseStats(clicks)
 }
   
 
@@ -28,6 +31,8 @@ export function buildings_upgrades(upgrade = Number, index = Number, up_value = 
 
     buildings[index].cont_item++
     cont_text.textContent = buildings[index].cont_item
+
+    increaseStats(0, true)
 
     if (buildings[index].cont_item == 1){
         show++
@@ -85,11 +90,14 @@ setInterval( () => {
     }
 
     checkbuilds()
+    updateStatistics(gems, clicks, gemsPerSecond)
 })
 
 setInterval(() => {
     gems += gemsPerSecond
     gems = Number(gems.toFixed(1))
+
+    increaseStats(gemsPerSecond)
 }, 1000)
 
 imgGem.addEventListener('click', increasePoints);
