@@ -98,5 +98,5 @@ const gpsloop = setInterval(() => {
 
 imgGem.addEventListener('click', () => {
     increasePoints(clicks)
-    increaseStats(clicks)
+    increaseStats(clicks, false, true)
 });
